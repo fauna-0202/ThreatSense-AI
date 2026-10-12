@@ -1,0 +1,52 @@
+# ThreatSense AI Core Application Configuration
+
+app:
+  name: "ThreatSense AI"
+  tagline: "Detect. Explain. Defend."
+  version: "1.0.0"
+  env: "development"
+  debug: true
+
+api:
+  host: "127.0.0.1"
+  port: 8000
+  prefix: "/api/v1"
+  cors_origins:
+    - "http://localhost:8501"
+    - "http://127.0.0.1:8501"
+    - "http://localhost:8000"
+    - "http://127.0.0.1:8000"
+  api_key_header: "X-API-Key"
+  rate_limit_per_minute: 120
+
+database:
+  url: "sqlite:///./data/threatsense.db"
+  echo: false
+  pool_pre_ping: true
+
+models:
+  active_classifier_id: "rf_cicids2017_v1"
+  active_anomaly_id: "iforest_cicids2017_v1"
+  artifacts_dir: "./artifacts/models"
+  reports_dir: "./artifacts/reports"
+  feature_schema_version: "threatsense-features-v1"
+
+risk_scoring:
+  bands:
+    low: [0, 24]
+    moderate: [25, 49]
+    high: [50, 74]
+    critical: [75, 100]
+  base_weights:
+    classifier_prob: 0.50
+    anomaly_contribution: 0.30
+    protocol_service_risk: 0.20
+  uncertainty_penalty_factor: 0.15
+  min_confidence_threshold: 0.60
+  anomaly_decision_threshold: -0.10
+
+explainability:
+  enabled: true
+  max_features: 5
+  explainer_type: "tree"  # tree | exact | fallback
+  cache_size: 1000

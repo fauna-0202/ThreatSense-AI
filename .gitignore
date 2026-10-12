@@ -1,0 +1,116 @@
+# ==============================================================================
+# ThreatSense AI — Comprehensive .gitignore
+# ==============================================================================
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.dylib
+*.dll
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+htmlcov/
+.tox/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+.env.staging
+.env.production
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+
+# Explicit exception for the safe environment template
+!.env.example
+
+# Local Databases & Runtime Storage
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+data/*.sqlite
+data/*.sqlite3
+data/threatsense.db
+
+# Datasets and Capture Data
+*.pcap
+*.pcapng
+*.cap
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Preserve only sanitized demonstration sample fixtures
+data/samples/*
+!data/samples/sample_zeek_conn.log
+
+# Generated Machine Learning Binaries
+artifacts/models/*.joblib
+artifacts/models/*.pkl
+artifacts/models/*.pt
+artifacts/models/*.onnx
+!artifacts/models/metadata.json
+!artifacts/models/.gitkeep
+
+# Runtime Logs and Sensor Output
+logs/
+*.log
+sensor/zeek_logs/*
+!sensor/zeek_logs/.gitkeep
+!data/samples/sample_zeek_conn.log
+
+# IDE and Editor Workspace Directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini

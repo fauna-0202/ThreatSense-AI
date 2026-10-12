@@ -1,0 +1,14 @@
+# ThreatSense AI Sensor Configuration
+
+sensor:
+  id: "sensor-node-01"
+  mode: "replay" # options: live, replay, stopped
+  authorized_interface: "eth0"
+  zeek_bin: "zeek"
+  log_dir: "./sensor/zeek_logs"
+  conn_log_filename: "conn.log"
+  replay_sample_file: "./data/samples/sample_zeek_conn.log"
+  poll_interval_seconds: 1.0
+  max_batch_size: 100
+  log_format: "json" # json or tsv
+  rotation_check_interval: 10.0

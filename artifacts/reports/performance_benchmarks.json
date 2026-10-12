@@ -1,0 +1,12 @@
+{
+  "benchmark_workload_events": 250,
+  "total_elapsed_seconds": 9.636,
+  "throughput_events_per_sec": 25.94,
+  "inference_latency_ms": {
+    "mean": 38.51,
+    "p50": 32.79,
+    "p95": 58.64,
+    "p99": 66.98
+  },
+  "database_query_latency_ms": 7.82
+}

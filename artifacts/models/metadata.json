@@ -1,0 +1,31 @@
+{
+  "model_version": "rf_threatsense_v1",
+  "anomaly_model_version": "iforest_threatsense_v1",
+  "baseline_model_version": "gb_threatsense_v1",
+  "feature_schema_version": "threatsense-features-v1",
+  "feature_names": [
+    "duration",
+    "orig_bytes",
+    "resp_bytes",
+    "orig_pkts",
+    "resp_pkts",
+    "total_bytes",
+    "total_pkts",
+    "bytes_per_sec",
+    "pkts_per_sec",
+    "orig_to_resp_byte_ratio",
+    "orig_to_resp_pkt_ratio",
+    "dst_port"
+  ],
+  "classes": [
+    "BENIGN",
+    "Botnet",
+    "BruteForce",
+    "DoS/DDoS",
+    "PortScan"
+  ],
+  "training_samples": 12000,
+  "benign_samples": 7822,
+  "trained_at": "2026-10-11T14:04:43.021703+00:00",
+  "random_seed": 42
+}

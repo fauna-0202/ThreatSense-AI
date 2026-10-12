@@ -1,0 +1,126 @@
+{
+  "evaluation_timestamp": "2026-10-11T14:04:45.786187+00:00",
+  "test_sample_count": 3000,
+  "classes": [
+    "BENIGN",
+    "Botnet",
+    "BruteForce",
+    "DoS/DDoS",
+    "PortScan"
+  ],
+  "primary_model": {
+    "name": "Random Forest Classifier",
+    "accuracy": 0.999,
+    "macro_f1": 0.9978,
+    "macro_precision": 0.9984,
+    "macro_recall": 0.9972,
+    "benign_fpr": 0.0005,
+    "confusion_matrix": [
+      [
+        1954,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        146,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        146,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        459,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        292
+      ]
+    ],
+    "per_class_report": {
+      "BENIGN": {
+        "precision": 0.9989775051124744,
+        "recall": 0.9994884910485934,
+        "f1-score": 0.9992329327537715,
+        "support": 1955.0
+      },
+      "Botnet": {
+        "precision": 1.0,
+        "recall": 0.9864864864864865,
+        "f1-score": 0.9931972789115646,
+        "support": 148.0
+      },
+      "BruteForce": {
+        "precision": 0.9931972789115646,
+        "recall": 1.0,
+        "f1-score": 0.9965870307167235,
+        "support": 146.0
+      },
+      "DoS/DDoS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 459.0
+      },
+      "PortScan": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 292.0
+      },
+      "accuracy": 0.999,
+      "macro avg": {
+        "precision": 0.9984349568048078,
+        "recall": 0.9971949955070161,
+        "f1-score": 0.997803448476412,
+        "support": 3000.0
+      },
+      "weighted avg": {
+        "precision": 0.9990026084053252,
+        "recall": 0.999,
+        "f1-score": 0.9989984290990588,
+        "support": 3000.0
+      }
+    },
+    "feature_importances": {
+      "resp_bytes": 0.18821835794120212,
+      "total_pkts": 0.1267396645988924,
+      "orig_to_resp_byte_ratio": 0.11748479383199525,
+      "total_bytes": 0.11549705437143232,
+      "orig_bytes": 0.09048488604571096,
+      "orig_pkts": 0.08007793656419983,
+      "duration": 0.07447641176065774,
+      "orig_to_resp_pkt_ratio": 0.0696772040971691,
+      "bytes_per_sec": 0.04718802888512211,
+      "resp_pkts": 0.043086912246712246,
+      "pkts_per_sec": 0.02732045115412471,
+      "dst_port": 0.019748298502781248
+    }
+  },
+  "baseline_comparison": {
+    "name": "Gradient Boosting Classifier",
+    "accuracy": 0.9997,
+    "macro_f1": 0.9993
+  },
+  "anomaly_detector": {
+    "name": "Isolation Forest",
+    "detected_anomalies": 1041,
+    "anomaly_rate": 0.347,
+    "agreement_with_classifier": 0.9363
+  }
+}
